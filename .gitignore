@@ -2,3 +2,4 @@ node_modules
 dist 
 MyInfo.txt
 constants.js
+'../utils/constants.js'
