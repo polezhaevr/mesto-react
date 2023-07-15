@@ -15,6 +15,7 @@ function PopupWithForm(props) {
         ></button>
         <h2 className="popup__edit-title">{props.title}</h2>
         <form
+          onSubmit={props.onSubmit}
           name={props.name}
           className={`popup__edit-form popup__edit-form-${props.name}`}
         >
@@ -23,7 +24,6 @@ function PopupWithForm(props) {
             name="inputsaveedit"
             type="submit"
             className="popup__btn-save-edit popup__btn-save-edit_disabled popup__btn-progress-status"
-            disabled
           >
             {props.textButton}
           </button>

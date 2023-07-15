@@ -1,12 +1,43 @@
+import React from "react";
+import { CurrentUser } from "../contexts/CurrentUserContext";
+
 function Card(props) {
+  const currentUserContext = React.useContext(CurrentUser);
+
+  // Определяем, являемся ли мы владельцем текущей карточки
+  const isOwn = props.item.owner._id === currentUserContext._id;
+  const cardDeleteButtonClassName = `photo-post__btn-trash ${
+    isOwn ? "photo-post__btn-trash_active" : ""
+  }`;
+
+  // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
+  const isLiked = props.item.likes.some(
+    (i) => i._id === currentUserContext._id,
+  );
+  const cardLikeIconClassName = `photo-post__btn-like  ${
+    isLiked ? "photo-post__btn-like_focus" : ""
+  }`;
+
   function handleCardClick() {
     props.onCardClick(props.item);
+  }
+
+  function handleLikeClick() {
+    props.onCardLike(props.item, currentUserContext._id);
+  }
+
+  function handleDeleteClick() {
+    props.onCardDelete(props.item._id);
   }
 
   return (
     <div className="photo-post-template">
       <li className="photo-post__item">
-        <button className="photo-post__btn-trash" type="button"></button>
+        <button
+          className={cardDeleteButtonClassName}
+          onClick={handleDeleteClick}
+          type="button"
+        ></button>
         <img
           className="photo-post__image"
           alt={props.item.alt}
@@ -16,8 +47,12 @@ function Card(props) {
         <div className="photo-post__text-container">
           <h2 className="photo-post__text">{props.item.name}</h2>
           <div className="photo-post__container-count">
-            <button className="photo-post__btn-like" type="button"></button>
-            <p className="photo-post__count-likes">0</p>
+            <button
+              className={cardLikeIconClassName}
+              onClick={handleLikeClick}
+              type="button"
+            ></button>
+            <p className="photo-post__count-likes">{props.item.likes.length}</p>
           </div>
         </div>
       </li>

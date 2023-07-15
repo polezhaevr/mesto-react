@@ -1,4 +1,5 @@
 .photo-post__btn-trash {
+  opacity: 0;
   width: 18px;
   height: 19.3px;
   position: absolute;
@@ -10,8 +11,4 @@
   top: 25.7px;
   right: 21.28px;
   background-color: rgba(0, 0, 0, 0);
-}
-
-.photo-post__btn-trash:hover {
-  opacity: 0.6;
 }

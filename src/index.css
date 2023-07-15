@@ -25,6 +25,7 @@
 @import url(./styles/blocks/photo-post/__text-container/photo-post__text-container.css);
 @import url(./styles/blocks/photo-post/__btn-like/photo-post__btn-like.css);
 @import url(./styles/blocks/photo-post/__btn-trash/photo-post__btn-trash.css);
+@import url(./styles/blocks/photo-post/__btn-trash/_active/photo-post__btn-trash_active.css);
 @import url(./styles/blocks/photo-post/__btn-like/_focus/photo-post__btn-like_focus.css);
 @import url(./styles/blocks/photo-post/__container-count/photo-post__container-count.css);
 @import url(./styles/blocks/photo-post/__count-likes/photo-post__count-likes.css);
