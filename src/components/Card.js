@@ -31,32 +31,30 @@ function Card(props) {
   }
 
   return (
-    <div className="photo-post-template">
-      <li className="photo-post__item">
-        <button
-          className={cardDeleteButtonClassName}
-          onClick={handleDeleteClick}
-          type="button"
-        ></button>
-        <img
-          className="photo-post__image"
-          alt={props.item.alt}
-          src={props.item.link}
-          onClick={handleCardClick}
-        />
-        <div className="photo-post__text-container">
-          <h2 className="photo-post__text">{props.item.name}</h2>
-          <div className="photo-post__container-count">
-            <button
-              className={cardLikeIconClassName}
-              onClick={handleLikeClick}
-              type="button"
-            ></button>
-            <p className="photo-post__count-likes">{props.item.likes.length}</p>
-          </div>
+    <li className="photo-post__item">
+      <button
+        className={cardDeleteButtonClassName}
+        onClick={handleDeleteClick}
+        type="button"
+      ></button>
+      <img
+        className="photo-post__image"
+        alt={props.item.alt}
+        src={props.item.link}
+        onClick={handleCardClick}
+      />
+      <div className="photo-post__text-container">
+        <h2 className="photo-post__text">{props.item.name}</h2>
+        <div className="photo-post__container-count">
+          <button
+            className={cardLikeIconClassName}
+            onClick={handleLikeClick}
+            type="button"
+          ></button>
+          <p className="photo-post__count-likes">{props.item.likes.length}</p>
         </div>
-      </li>
-    </div>
+      </div>
+    </li>
   );
 }
 
