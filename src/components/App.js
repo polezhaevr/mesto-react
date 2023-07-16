@@ -58,7 +58,7 @@ function App() {
     api
       .editUserInfo(data)
       .then((data) => {
-        setUser({ name: data.name, about: data.about, avatar: data.avatar });
+        setUser(data);
       })
       .then(() => closeAllPopups())
       .catch((err) => console.log(err));
@@ -71,7 +71,7 @@ function App() {
     api
       .updateAvatar(data)
       .then((data) => {
-        setUser({ name: data.name, about: data.about, avatar: data.avatar });
+        setUser(data);
       })
       .then(() => closeAllPopups())
       .catch((err) => console.log(err));
